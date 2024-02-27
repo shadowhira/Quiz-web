@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo/Chỉnh sửa Kỳ thi</title>
+    <link rel="stylesheet" href="../Assets/style/tao-chinh-sua-ky-thi.css">
+    <script src="../Assets/script/tao-chinh-sua-ky-thi.js"></script>
+    <link rel="shortcut icon" href="https://portal.ptit.edu.vn/giaovu/wp-content/uploads/2016/05/favicon.png">
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard Admin</h1>
+    </header>
+    <div class="header-right">
+        <a href="./trang-dang-nhap-admin.html">Đăng xuất</a>
+    </div>
+    <main>
+        <section class="sidebar">
+            <ul>
+                <li><a href="./dashboard-admin.html">Quản lý tài khoản</a></li>
+                <li><a href="./trang-bai-thi.html">Quản lý bài thi</a></li>
+                <li><a href="./tao-chinh-sua-ky-thi.html">Quản lý câu hỏi</a></li>
+                <li><a href="./trang-thong-ke.html">Thống kê</a></li>
+            </ul>
+        </section>
+        <section class="content">
+            <h2>Tạo/Chỉnh sửa Kỳ thi</h2>
+            <form action="xuly-taokithi.php" method="post">
+                <input type="hidden" name="id" value="1">
+                <p>Tên kỳ thi:</p>
+                <input type="text" name="name" value="Kỳ thi giữa kỳ môn Lập trình web" required>
+                <p>Mô tả:</p>
+                <textarea name="description" rows="5">Kỳ thi giữa kỳ môn Lập trình web</textarea>
+                <p>Thời gian bắt đầu:</p>
+                <input type="datetime-local" name="start_time" value="2024-03-15T09:00" required>
+                <p>Thời gian kết thúc:</p>
+                <input type="datetime-local" name="end_time" value="2024-03-15T11:00" required>
+                <p>Thời gian làm bài (phút):</p>
+                <input type="number" name="duration" value="120" required>
+                <p>Loại kỳ thi:</p>
+                <select name="type">
+                    <option value="1">Có thời gian cụ thể</option>
+                    <option value="2">Tự do</option>
+                </select>
+                <p>Số câu hỏi:</p>
+                <input type="number" name="number_of_questions" value="50" required>
+                <p>Mức độ khó:</p>
+                <select name="difficulty">
+                    <option value="1">Dễ</option>
+                    <option value="2">Trung bình</option>
+                    <option value="3">Khó</option>
+                </select>
+                <button type="submit">Lưu</button>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
