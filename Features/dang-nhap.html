@@ -5,31 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng nhập</title>
-    <link rel="stylesheet" href="../Assets/style/dang-nhap.css">
-    <script src="../Assets/script/dang-nhap.js"></script>
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="stylesheet" href="../assets/css/dang-nhap.css">
     <link rel="shortcut icon" href="https://portal.ptit.edu.vn/giaovu/wp-content/uploads/2016/05/favicon.png">
+    <link rel="stylesheet" href="../assets/features/trang-user.html">
 </head>
 
 <body>
-    <div style="float:right">
-        <a href="./trang-dang-nhap-admin.html">
-            <button>Đăng nhập admin</button>
-        </a>
-    </div>
     <div class="container">
+        <div class="admin-login">
+            <a href="../index.html">Về trang chủ</a>
+            <a href="./trang-dang-nhap-admin.html">Đăng nhập admin</a>
+        </div>
         <form action="#">
             <h1>Đăng nhập</h1>
-            <input type="text" placeholder="Tên đăng nhập" name="username" required>
-            <input type="password" placeholder="Mật khẩu" name="password" required>
-            <!-- <button type="submit">Đăng nhập</button> -->
-            <a href="../index.html">
-                <button>Đăng nhập</button>
-            </a>
-            <a href="#">Quên mật khẩu?</a>
-            <p>Bạn chưa có tài khoản? <a href="dang-ky.html">Đăng ký ngay</a></p>
+            <div class="input-container">
+                <input type="text" placeholder="Tên đăng nhập" name="username" required>
+            </div>
+            <div class="input-container">
+                <input type="password" placeholder="Mật khẩu" name="password" required>
+            </div>
+            <div class="button-container">
+                <button type="submit">Đăng nhập</button>
+            </div>
+            <div class="links">
+                <a href="#" class="forgot-password">Quên mật khẩu?</a>
+                <p>Bạn chưa có tài khoản? <a href="dang-ky.html">Đăng ký ngay</a></p>
+            </div>
         </form>
     </div>
-    <script></script>
+    <script src="../../assets/scripts/dang-nhap.js"></script>
 </body>
 
 </html>

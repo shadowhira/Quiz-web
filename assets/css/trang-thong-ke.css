@@ -1,0 +1,141 @@
+/* Kiểu cho trang thống kê */
+/* @import url('https://fonts.googleapis.com/css2?family=Arial+Unicode+MS&display=swap'); */
+body {
+  font-family: 'Arial Unicode MS', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #ff373d;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  padding-left: 10px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.back-icon {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.back-icon i {
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+
+}
+.filter {
+  margin-bottom: 10px; /* Khoảng cách từ container trên xuống phần filter */
+
+}
+
+.filter label {
+  margin-right: 10px; /* Khoảng cách giữa label và dropdown */
+}
+
+.filter select {
+  padding: 3px; /* Độ dày của dropdown */
+  border-radius: 5px; /* Bo tròn góc của dropdown */
+  border: 1px solid #ccc; /* Viền xám */
+  background-color: #fff; /* Màu nền trắng */
+  font-size: 16px; /* Cỡ chữ */
+  cursor: pointer; /* Con trỏ chuột là bàn tay */
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 5px 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #ff373d;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+/* CSS cho biểu đồ */
+.chart-container {
+  width: 100%; /* Điều chỉnh chiều rộng của biểu đồ */
+  margin-top: 100px; /* Tăng khoảng cách với bảng */
+  align-items: center;
+  text-align: center;
+  min-width: 600px;
+}
+
+
+.chart-container #average-score-chart {
+  max-width: 800px; /* Điều chỉnh chiều rộng tối đa của biểu đồ */
+  margin: 0 auto; /* Căn giữa biểu đồ trong container */
+  min-width: 600px;
+}
+
+.export-buttons {
+  margin-top: 20px; /* Khoảng cách từ biểu đồ xuống đến nút */
+  text-align: center;
+}
+
+.export-buttons button {
+  background-color: #ff373d; /* Màu nền */
+  border: none; /* Không viền */
+  border-radius: 5px;
+  color: white; /* Màu chữ */
+  padding: 10px 20px; /* Độ rộng và độ cao của nút */
+  text-align: center; /* Căn giữa nội dung nút */
+  text-decoration: none; /* Không gạch chân */
+  display: inline-block; /* Hiển thị là một khối */
+  font-size: 16px; /* Cỡ chữ */
+  margin-right: 10px; /* Khoảng cách với nút bên cạnh */
+  cursor: pointer; /* Con trỏ chuột là bàn tay */
+}
+
+.export-buttons button:hover {
+  background-color: #e2252c; /* Màu nền khi di chuột vào */
+}
+
+.export-buttons button:focus {
+  outline: none; /* Loại bỏ viền khi focus */
+}
+
+.export-buttons button i{
+  margin-right: 15px;
+}

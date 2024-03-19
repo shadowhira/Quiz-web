@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: var(--theme-color);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-icon {
+  color: white;
+  font-size: 25px;
+  align-self: flex-start; /* Đặt align-self thành flex-start để căn chỉnh về bên trái */
+  margin-left: 16px; /* Tạo khoảng cách giữa nút và tiêu đề */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  align-self: center;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#summary {
+  margin-bottom: 30px;
+}
+
+#summary h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+#summary p {
+  margin-bottom: 24px;
+  color: #555;
+  font-size: 2rem;
+}
+
+#summary span {
+  font-weight: bold;
+}
+
+.detail-answer h2{
+  font-size: 2rem;
+}
+
+.question {
+
+}
+
+.question-heading {
+  font-size: 2rem;
+}
+
+.answer {
+
+}
+
+.answer-item label{
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.answer-item label input{
+  margin-right: 8px;
+}
+.answer-item{
+  margin-bottom: 16px;
+}
+
+.answer-correct {
+  font-size:1.8rem;
+  margin: 8px 0;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 400px;
+}
+
+footer button {
+  padding: 10px 20px;
+  background-color: var(--theme-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+footer button:hover {
+  background-color: #df2525;
+}

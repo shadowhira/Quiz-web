@@ -1,49 +1,150 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang bài thi</title>
-    <link rel="stylesheet" href="../Assets/style/trang-bai-thi.css">
-    <script src="../Assets/script/trang-bai-thi.js"></script>
+    <title>Trang Bài Thi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="../assets/css/base.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/fonts/fontawesome-free-6.5.1-web/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/grid.css">
     <link rel="shortcut icon" href="https://portal.ptit.edu.vn/giaovu/wp-content/uploads/2016/05/favicon.png">
+    <link rel="stylesheet" href="../assets/css/trang-bai-thi.css">
 </head>
-
 <body>
-    <header>
-        <h1>Hệ thống thi trắc nghiệm trực tuyến</h1>
-        <div class="header-right">
-            <p>Thời gian còn lại: <span id="time-left">120:00</span></p>
-        </div>
-    </header>
-    <br>
-    <main>
-        <section class="exam-info">
-            <h2>Kỳ thi giữa kỳ môn Lập trình web</h2>
-            <p>Thời gian: 120 phút</p>
-            <p>Số câu hỏi: 50</p>
-        </section>
-        <section class="list-questions">
-            <ul>
-                <li>
-                    <p>Câu 1: Biến nào sau đây được sử dụng để khai báo hằng số trong JavaScript?</p>
-                    <ul>
-                        <li><input type="radio" name="question-1" value="var"> var</li>
-                        <li><input type="radio" name="question-1" value="let"> let</li>
-                        <li><input type="radio" name="question-1" value="const"> const</li>
-                    </ul>
-                </li>
-                <li>
-                    <p>Câu 2: ...</p>
-                </li>
-            </ul>
-        </section>
-        <section class="action">
-            <button id="btn-submit">Nộp bài</button>
-        </section>
-    </main>
-    <script src="script.js"></script>
-</body>
+    
+    <div class="app">
+        <div class="header">
+            <div class="grid wide">
+                <div class="row">
+                    <nav class="header__navbar">
+                        <a class = "header__logo" href="../../assets/features/trang-user.html">
+                            <img src="../../assets/images/LOGO_PTIT.jpg" alt="" class="header__logo-icon">
+                        </a>
+                        <div class="header__navbar-search">
+                            <div class="header__search-input-wrap">
+                                <input type="text" class="header__search-input" id = "searchInput" placeholder="Tìm kiếm nội dung">
+                                <div class="header__search-history">
+                                    <h3 class="header__search-history-heading">
+                                        Lịch sử tìm kiếm
+                                    </h3>
+                                    <ul class="header__search-history-list">
+                                        <a href = "" class="header__search-history-item">Thi giữa kì</a>
+                                        <a href = "" class="header__search-history-item">Thi cuối kì</a>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button onclick="searchExam()" class="search__btn">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                        <select class = "header__navbar-filter" id="statusFilter">
+                            <option value="ALL">Tất cả</option>
+                            <option value="Tự do">Truy cập tự do</option>
+                            <option value="Thời gian cụ thể">Yêu cầu thời gian cụ thể</option>
+                        </select>
+                        <ul class="header__navbar-list">
+                            <li class="header__navbar-item"> 
+                                <a href="" class="header__navbar-item-link">
+                                    <i class="fa-solid fa-circle-info"></i>
+                                    Trợ giúp
+                                </a>
+                            </li> 
+                            <div class="header-right">
+                                <div class="avatar" id="avatar">
+                                    <!-- Avatar icon or image -->
+                                    <img src="/assets/images/LOGO_PTIT.jpg" alt="">
+                                    <div class="dropdown-content" id="dropdownContent">
+                                        <!-- Các dòng chữ -->
+                                        <a href="./thay-doi-mat-khau.html">Thay đổi mật khẩu</a>
+                                        <a href="./dang-nhap.html">Đăng xuất</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </ul>
+                        
+                    </nav>
 
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="category l-2">
+                        <div class="category__option">
+                            <h3 id = "exam-list" class="category__option-heading">
+                                <i class="fa-solid fa-list"></i>
+                                Danh Sách Kỳ Thi
+                            </h3>
+                            <ul id = "list-exam" class="category__option-list" id = "list-exam">
+                                <!-- Exam duoc day len tu JS -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="content__info l-10">
+                        <header class = "content__info-heading">
+                            <h1>Bài thi</h1>
+                            <div class="timer">Thời gian còn lại: <span id="countdown"></span></div>
+                        </header>
+                        <main class = "content__info-exam">
+                            <!-- Phần nhập thông tin thí sinh -->
+                            <section class="candidate-info">
+                                <h2>Thông tin thí sinh</h2>
+                                <form id="candidate-form">
+                                    <div class="form-group">
+                                        <label for="fullname">Họ và tên:</label>
+                                        <input type="text" id="fullname" name="fullname" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="student-id">Mã sinh viên:</label>
+                                        <input type="text" id="student-id" name="student-id" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="class">Lớp:</label>
+                                        <input type="text" id="class" name="class" required>
+                                    </div>
+                                </form>
+                            </section>
+                    
+                            <!-- Phần câu hỏi -->
+                            
+                        </main>
+                        <footer class = "submit__exam">
+                            <button onclick="submitExam()">Nộp bài</button>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+
+        </div>
+    </div>
+    <!-- <script>
+        var examList = document.getElementById('exam-list');
+
+        // Thêm sự kiện click cho phần tử "Danh sách kỳ thi"
+        examList.addEventListener('click', function() {
+            // Lấy danh sách các kỳ thi
+            var examListItems = document.getElementById('list-exam');
+            
+            // Kiểm tra trạng thái hiển thị của danh sách kỳ thi
+            if (examListItems.style.display == 'none') {
+                // Nếu đang ẩn, hiển thị danh sách
+                examListItems.style.display = 'block';
+            } else if(examListItems.style.display = 'block') {
+                // Nếu đang hiển thị, ẩn danh sách
+                examListItems.style.display = 'none';
+            }
+        });
+    </script> -->
+    <script src="../../assets/scripts/trang-bai-thi.js"></script>
+</body>
 </html>
